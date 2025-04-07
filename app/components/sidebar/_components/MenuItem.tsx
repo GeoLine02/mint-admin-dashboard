@@ -15,7 +15,11 @@ const SideBarMenuItem = ({ Icon, title, isActive }: RouteProps) => {
       {isActive && (
         <div className="bg-primary-purple w-1.5 h-11 rounded-tr-sm rounded-br-sm"></div>
       )}
-      <div className="flex items-center justify-between bg-active-purple gap-2 p-2 rounded-md cursor-pointer w-full">
+      <div
+        className={`flex items-center justify-between ${
+          isActive && "bg-active-purple"
+        }  gap-2 p-2 rounded-md cursor-pointer w-full`}
+      >
         <div className="flex items-center gap-2">
           <Icon sx={{ color: isActive ? "#6E39CB" : "#3A3541" }} />
           <span
