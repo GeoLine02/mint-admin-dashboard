@@ -11,16 +11,14 @@ const SubMenuItem = ({ path, title }: SubMenuProps) => {
   const location = usePathname();
 
   return (
-    <div>
-      <Link
-        className={`${
-          location === path ? "text-primary-purple" : "text-primary-gray"
-        }`}
-        href={path}
-      >
-        {title}
-      </Link>
-    </div>
+    <Link
+      className={`${
+        location === path ? "text-primary-purple" : "text-primary-gray"
+      } hover:bg-hover-purple transition-all duration-300 rounded-md w-full flex justify-start p-1.5 ml-6`}
+      href={path}
+    >
+      {title}
+    </Link>
   );
 };
 

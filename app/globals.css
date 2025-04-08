@@ -4,4 +4,21 @@
   --color-active-purple: #deccfe;
   --color-primary-purple: #6e39cb;
   --color-primary-gray: #3a3541;
+  --color-hover-purple: #f3ecfe;
+  --color-light-gray: #dbdcde;
+  --color-surface-gray: #f4f5f9;
+}
+
+@layer utilities {
+  .submenu-transition {
+    @apply overflow-hidden transition-all duration-600 ease-in-out;
+  }
+
+  .submenu-open {
+    @apply max-h-40 opacity-100;
+  }
+
+  .submenu-closed {
+    @apply max-h-0 opacity-0;
+  }
 }
