@@ -1,5 +1,3 @@
-import React from "react";
-
 import { SvgIconComponent } from "@mui/icons-material";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
@@ -11,12 +9,12 @@ interface RouteProps {
 
 const SideBarMenuItem = ({ Icon, title, isActive }: RouteProps) => {
   return (
-    <div className="flex items-center gap-2 w-full">
+    <div className="flex items-center gap-2 w-full ">
       {isActive && (
         <div className="bg-primary-purple w-1.5 h-11 rounded-tr-sm rounded-br-sm"></div>
       )}
       <div
-        className={`flex items-center justify-between ${
+        className={`flex items-center justify-between hover:bg-hover-purple duration-300 transition-all ${
           isActive && "bg-active-purple"
         }  gap-2 p-2 rounded-md cursor-pointer w-full`}
       >
