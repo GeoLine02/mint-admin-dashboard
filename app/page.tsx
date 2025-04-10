@@ -1,3 +1,9 @@
+import DashboardSceen from "./components/dashboard/DashboardSceen";
+
 export default function Dashboard() {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <DashboardSceen />
+    </div>
+  );
 }
