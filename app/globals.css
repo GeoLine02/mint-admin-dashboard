@@ -1,12 +1,16 @@
 @import "tailwindcss";
 
 @theme {
+  /* colors */
   --color-active-purple: #deccfe;
   --color-primary-purple: #6e39cb;
   --color-primary-gray: #3a3541;
   --color-hover-purple: #f3ecfe;
   --color-light-gray: #dbdcde;
   --color-surface-gray: #f4f5f9;
+
+  /* screens */
+  --breakpoint-3xl: 119rem;
 }
 
 @layer utilities {
