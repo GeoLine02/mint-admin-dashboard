@@ -11,6 +11,10 @@
 
   /* screens */
   --breakpoint-3xl: 119rem;
+  --breakpoint-laptop: 90rem;
+
+  /* fonts */
+  --font-lato: "Lato", "sans-serif";
 }
 
 @layer utilities {
@@ -25,4 +29,24 @@
   .submenu-closed {
     @apply max-h-0 opacity-0;
   }
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Optional: track background */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6e39cb; /* Scrollbar slider (thumb) */
+  border-radius: 6px;
+  border: 3px solid #f0f0f0; /* Optional: border around thumb for padding */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #6e39cb #f0f0f0; /* thumb color, track color */
 }
