@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`flex min-h-screen ${lato.variable} font-lato`}>
         <Sidebar />
-        <div className="w-full px-[30px] pb-[77px] bg-surface-gray">
+        <div className="w-full px-[30px] bg-surface-gray">
           <Header />
           <main>{children}</main>
           <footer></footer>

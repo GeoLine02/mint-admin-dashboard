@@ -10,6 +10,7 @@ interface LinearProgressBarProps {
   totalBarColor: string;
   valueColor: string;
   className: string;
+  height?: number;
 }
 
 const LinearProgressBar = ({
@@ -17,6 +18,7 @@ const LinearProgressBar = ({
   value,
   valueColor,
   className,
+  height,
 }: LinearProgressBarProps) => {
   const StyledLinearProgressBar = styled(LinearProgress)({
     [`&.${linearProgressClasses.determinate}`]: {
@@ -31,7 +33,13 @@ const LinearProgressBar = ({
 
   return (
     <div className={`${className}`}>
-      <StyledLinearProgressBar variant="determinate" value={value} />
+      <StyledLinearProgressBar
+        style={{
+          height: `${height}px`,
+        }}
+        variant="determinate"
+        value={value}
+      />
     </div>
   );
 };
