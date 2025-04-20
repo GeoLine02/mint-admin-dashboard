@@ -9,8 +9,8 @@ import clsx from "clsx";
 const MenuList = () => {
   const [collapsedRoute, setCollapsedRoute] = useState<string | null>(null);
 
-  const handleCollapseRoute = (routeTitle: string) => {
-    setCollapsedRoute((prev) => (prev === routeTitle ? null : routeTitle));
+  const handleCollapseRoute = (accessorKey: string) => {
+    setCollapsedRoute((prev) => (prev === accessorKey ? null : accessorKey));
   };
 
   return (
@@ -28,7 +28,6 @@ const MenuList = () => {
               <MenuItem isActive={isOpen} Icon={Icon} title={title} />
             </div>
 
-            {/* Submenu with falling animation */}
             <div
               className={clsx(
                 "submenu-transition",
@@ -36,12 +35,8 @@ const MenuList = () => {
               )}
             >
               <div className="flex flex-col items-start px-4 py-2 gap-2">
-                {subMenu.map((subMenuItem) => (
-                  <SubMenuItem
-                    key={subMenuItem.accessorKey}
-                    path={subMenuItem.path}
-                    title={subMenuItem.title}
-                  />
+                {subMenu.map((sub) => (
+                  <SubMenuItem key={sub.accessorKey} item={sub} />
                 ))}
               </div>
             </div>

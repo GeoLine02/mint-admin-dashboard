@@ -1,10 +1,16 @@
 import HomeIcon from "@mui/icons-material/Home";
 import DescriptionIcon from "@mui/icons-material/Description";
 import { SvgIconComponent } from "@mui/icons-material";
-interface ISubMenu {
+
+export interface ISubMenu {
   title: string;
   accessorKey: string;
-  path: string;
+  path?: string;
+  subMenu?: {
+    title: string;
+    accessorKey: string;
+    path: string;
+  }[];
 }
 
 export interface IRoute {
@@ -38,14 +44,15 @@ const routesConfig: IRoute[] = [
     Icon: DescriptionIcon,
     subMenu: [
       {
-        title: "Dashboard",
-        accessorKey: "dashboard",
-        path: "/",
-      },
-      {
-        title: "Analytics",
-        accessorKey: "analytics",
-        path: "/analytics",
+        title: "Profile",
+        accessorKey: "profile",
+        subMenu: [
+          {
+            title: "Profile overview",
+            accessorKey: "profileOverview",
+            path: "/pages/profile/profile_overview",
+          },
+        ],
       },
     ],
   },
