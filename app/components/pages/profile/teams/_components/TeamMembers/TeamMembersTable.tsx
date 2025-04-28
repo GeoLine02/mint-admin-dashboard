@@ -6,9 +6,8 @@ import TeamMemberCard from "./TeamMemberCard";
 import { useEffect, useState } from "react";
 import Modal from "@/app/components/ui/Modal";
 import Button from "@/app/components/ui/Button";
-import DeleteForeverRoundedIcon from "@mui/icons-material/DeleteForeverRounded";
 import CheckRoundedIcon from "@mui/icons-material/CheckRounded";
-// import { useRouter } from "next/navigation";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 
 const TeamMembersTable = () => {
   const [teamMembers, setTeamMembers] =
@@ -57,6 +56,7 @@ const TeamMembersTable = () => {
       (member) => member.id !== memberId
     );
     setTeamMembers(filteredMembers);
+    setIsConfirmationModalOpen(false);
   };
 
   const handleOpenConfirmationModal = (memberId: number) => {
@@ -69,12 +69,6 @@ const TeamMembersTable = () => {
     setIsConfirmationModalOpen(false);
     setSelectedMember(null);
   };
-
-  // const router = useRouter();
-
-  // const handleEditMember = (memberId: number) {
-  //  router.push("/profile")
-  // }
 
   return (
     <>
@@ -143,32 +137,44 @@ const TeamMembersTable = () => {
         isOpen={isConfirmationModalOpne}
         onClose={handleCloseConfirmationModal}
       >
-        <div>
-          <p>Are you suer that you want to delete this user?</p>
+        <div className="flex flex-col gap-11 p-3">
+          <p className="max-w-[300px]">
+            Are you sure that you want to delete this user? User will be deleted
+            permamently
+          </p>
 
           <div className="flex items-center justify-between">
-            <button
-              onClick={() => handleDeleteMember(selectedMember?.id as number)}
-            >
-              Accept
-            </button>
             <Button
+              className="p-1 px-2"
               background="primaryPurple"
               border="none"
               textColor="white"
               title="Accept"
               type="button"
-              icon={<CheckRoundedIcon />}
+              icon={
+                <CheckRoundedIcon
+                  sx={{
+                    color: "white",
+                  }}
+                />
+              }
               rounded="medium"
               onClick={() => handleDeleteMember(selectedMember?.id as number)}
             />
             <Button
+              className="p-1 px-2"
               background="red"
               border="none"
               textColor="white"
               title="Decline"
               type="button"
-              icon={<DeleteForeverRoundedIcon />}
+              icon={
+                <CloseRoundedIcon
+                  sx={{
+                    cursor: "pointer",
+                  }}
+                />
+              }
               rounded="medium"
               onClick={handleCloseConfirmationModal}
             />

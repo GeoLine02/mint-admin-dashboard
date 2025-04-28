@@ -57,10 +57,11 @@ const Button = ({
 
   return (
     <div
+      onClick={onClick}
       className={`${backgroundClass} ${borderClass} ${borderRadiusClass} ${textColorClass} ${className} cursor-pointer flex items-center gap-2`}
     >
       {icon && <span>{icon}</span>}
-      <button disabled={disabled} type={type} onClick={onClick}>
+      <button className="cursor-pointer" disabled={disabled} type={type}>
         {title}
       </button>
     </div>
