@@ -1,7 +1,7 @@
 import classNames from "classnames";
 
 interface ButtonProps {
-  background: "transparent" | "solid" | "white";
+  background: "transparent" | "primaryPurple" | "white" | "red";
   textColor:
     | "white"
     | "lightPurple"
@@ -9,11 +9,13 @@ interface ButtonProps {
     | "transparent"
     | "lightGray";
   border: "dashed" | "solid" | "none";
-  rounded: "medium" | "none" | "full";
+  rounded?: "medium" | "none" | "full";
   title: string;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
   type: "button" | "submit";
+  icon?: React.ReactNode;
+  disabled?: boolean;
 }
 
 const Button = ({
@@ -25,11 +27,14 @@ const Button = ({
   title,
   onClick,
   type,
+  icon,
+  disabled,
 }: ButtonProps) => {
   const backgroundClass = classNames("btn", {
-    "bg-primary-purple": background === "solid",
+    "bg-primary-purple": background === "primaryPurple",
     "bg-transparent": background === "transparent",
     "bg-white": background === "white",
+    "bg-red-500": background === "red",
   });
 
   const borderClass = classNames("btn", {
@@ -47,17 +52,19 @@ const Button = ({
   const textColorClass = classNames("btn", {
     "text-primary-purple": textColor === "darkPurple",
     "text-white": textColor === "white",
-    "text-light-gray": textColor === "lightGray",
+    "text-[#89868D]": textColor === "lightGray",
   });
 
   return (
-    <button
-      type={type}
+    <div
       onClick={onClick}
-      className={`${backgroundClass} ${borderClass} ${borderRadiusClass} ${textColorClass} ${className}`}
+      className={`${backgroundClass} ${borderClass} ${borderRadiusClass} ${textColorClass} ${className} cursor-pointer flex items-center gap-2`}
     >
-      {title}
-    </button>
+      {icon && <span>{icon}</span>}
+      <button className="cursor-pointer" disabled={disabled} type={type}>
+        {title}
+      </button>
+    </div>
   );
 };
 
