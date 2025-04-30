@@ -57,6 +57,11 @@ const routesConfig: IRoute[] = [
             accessorKey: "teams",
             path: "/pages/profile/teams",
           },
+          {
+            title: "All projects",
+            accessorKey: "allProjects",
+            path: "/pages/profile/all_projects",
+          },
         ],
       },
     ],
