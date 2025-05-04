@@ -34,7 +34,6 @@ const NewUsersSeen = () => {
     twitter: "",
     zipCode: "",
   });
-  console.log(userFullInfo);
 
   return (
     <div className="space-y-6">
