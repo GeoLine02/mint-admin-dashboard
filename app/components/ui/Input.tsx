@@ -9,7 +9,8 @@ interface InputProps {
     | "email"
     | "password"
     | "radio"
-    | "checkbox";
+    | "checkbox"
+    | "url";
   placeholder?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -58,7 +59,8 @@ const Input = ({
         type === "button" ||
         type === "email" ||
         type === "password" ||
-        type === "submit") && (
+        type === "submit" ||
+        type === "url") && (
         <div className={`flex items-center gap-3 p-2 ${inputStyles}`}>
           {icon && <span>{icon}</span>}
           <input

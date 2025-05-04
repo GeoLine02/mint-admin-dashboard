@@ -9,16 +9,21 @@ interface WithFormikProps {
 
 const withFormik = <P extends object>(Component: React.ComponentType<P>) => {
   const Wrapped: React.FC<P & WithFormikProps> = ({ name, ...props }) => {
-    const [field] = useField(name);
+    const [field, meta] = useField(name);
 
     return (
-      <Component
-        {...(props as P)}
-        {...field}
-        value={field.value}
-        onChange={field.onChange}
-        name={name}
-      />
+      <div className="flex flex-col gap-1">
+        <Component
+          {...(props as P)}
+          {...field}
+          value={field.value}
+          onChange={field.onChange}
+          name={name}
+        />
+        {meta.touched && meta.error && (
+          <span className="text-sm text-red-500">{meta.error}</span>
+        )}
+      </div>
     );
   };
 
