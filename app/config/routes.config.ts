@@ -64,6 +64,17 @@ const routesConfig: IRoute[] = [
           },
         ],
       },
+      {
+        accessorKey: "users",
+        title: "Users",
+        subMenu: [
+          {
+            accessorKey: "newUsers",
+            path: "/pages/users/new_users",
+            title: "New users",
+          },
+        ],
+      },
     ],
   },
 ];
