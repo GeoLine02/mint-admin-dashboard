@@ -75,6 +75,17 @@ const routesConfig: IRoute[] = [
           },
         ],
       },
+      {
+        accessorKey: "account",
+        title: "Account",
+        subMenu: [
+          {
+            accessorKey: "settings",
+            title: "Settings",
+            path: "/pages/account/settings",
+          },
+        ],
+      },
     ],
   },
 ];

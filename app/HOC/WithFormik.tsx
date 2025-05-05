@@ -12,7 +12,7 @@ const withFormik = <P extends object>(Component: React.ComponentType<P>) => {
     const [field, meta] = useField(name);
 
     return (
-      <div className="flex flex-col gap-1">
+      <div className="space-y-1">
         <Component
           {...(props as P)}
           {...field}

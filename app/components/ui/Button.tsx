@@ -1,13 +1,14 @@
 import classNames from "classnames";
 
 interface ButtonProps {
-  background: "transparent" | "primaryPurple" | "white" | "red";
+  background: "transparent" | "primaryPurple" | "white" | "red" | "lightPurple";
   textColor:
     | "white"
     | "lightPurple"
     | "darkPurple"
     | "transparent"
     | "lightGray";
+
   border: "dashed" | "solid" | "none";
   rounded?: "medium" | "none" | "full";
   title: string;
@@ -35,6 +36,7 @@ const Button = ({
     "bg-transparent": background === "transparent",
     "bg-white": background === "white",
     "bg-red-500": background === "red",
+    "bg-active-purple": background === "lightPurple",
   });
 
   const borderClass = classNames("btn", {
