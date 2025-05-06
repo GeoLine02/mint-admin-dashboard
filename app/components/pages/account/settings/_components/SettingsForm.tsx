@@ -7,6 +7,7 @@ import { useState } from "react";
 import { IPersonalInformation } from "@/app/types/account";
 import UserPhotoUplaod from "./UserPhotoUplaod";
 import GoogleSignIn from "./GoogleSignIn";
+import { validationSchema } from "../validations";
 
 const SettingsForm = () => {
   const [personalInfo, setPersonalInfo] = useState<IPersonalInformation>({
@@ -24,18 +25,25 @@ const SettingsForm = () => {
 
   const submitForm = (values: IPersonalInformation) => {
     setPersonalInfo({ ...values });
+    values.image = null;
   };
-  console.log(personalInfo);
 
   return (
     <div>
-      <Formik initialValues={personalInfo} onSubmit={submitForm}>
+      <Formik
+        validationSchema={validationSchema}
+        initialValues={personalInfo}
+        onSubmit={submitForm}
+      >
         <Form className="mt-6">
           <SettingsHeader />
           <div className="flex gap-7">
             <PersonalInfo />
             <div className="space-y-7 w-full max-w-[20%]">
-              <UserPhotoUplaod />
+              <UserPhotoUplaod
+                setPersonalInfo={setPersonalInfo}
+                userPhoto={personalInfo.image as File}
+              />
               <GoogleSignIn />
             </div>
           </div>
