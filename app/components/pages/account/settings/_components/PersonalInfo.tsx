@@ -8,7 +8,7 @@ const PersonalInfo = () => {
   const FormikTextArea = withFormik(Textarea);
 
   return (
-    <Card className="w-full h-full max-w-[80%]">
+    <Card className="w-full h-full lg:max-w-[80%]">
       <div className="border-b border-medium-gray px-6 py-4">
         <h1 className="text-lg font-semibold">Personal information</h1>
       </div>

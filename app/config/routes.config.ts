@@ -84,6 +84,11 @@ const routesConfig: IRoute[] = [
             title: "Settings",
             path: "/pages/account/settings",
           },
+          {
+            accessorKey: "billing",
+            title: "Billing",
+            path: "/pages/account/billing",
+          },
         ],
       },
     ],

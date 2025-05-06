@@ -18,7 +18,7 @@ const SubMenuItem = ({ item }: Props) => {
   const toggle = () => setIsOpen((prev) => !prev);
 
   return (
-    <div className="w-full">
+    <div>
       <div
         onClick={hasChildren ? toggle : undefined}
         className={clsx(

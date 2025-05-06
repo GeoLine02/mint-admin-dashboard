@@ -13,9 +13,6 @@ export const validationSchema = yup.object().shape({
   image: yup
     .mixed<File>()
     .nullable()
-    .test("fileSize", "File size too large", (file) =>
-      file ? file.size <= 2 * 1024 * 1024 : true
-    )
     .test("fileType", "Unsupported file format", (file) =>
       file ? ["image/jpeg", "image/png", "image/jpg"].includes(file.type) : true
     ),

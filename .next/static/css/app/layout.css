@@ -316,9 +316,6 @@
   .w-5 {
     width: calc(var(--spacing) * 5);
   }
-  .w-7 {
-    width: calc(var(--spacing) * 7);
-  }
   .w-9 {
     width: calc(var(--spacing) * 9);
   }
@@ -342,9 +339,6 @@
   }
   .\!max-w-none {
     max-width: none !important;
-  }
-  .max-w-\[20\%\] {
-    max-width: 20%;
   }
   .max-w-\[80\%\] {
     max-width: 80%;
@@ -569,13 +563,6 @@
       --tw-space-y-reverse: 0;
       margin-block-start: calc(30px * var(--tw-space-y-reverse));
       margin-block-end: calc(30px * calc(1 - var(--tw-space-y-reverse)));
-    }
-  }
-  .space-x-2 {
-    :where(& > :not(:last-child)) {
-      --tw-space-x-reverse: 0;
-      margin-inline-start: calc(calc(var(--spacing) * 2) * var(--tw-space-x-reverse));
-      margin-inline-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .overflow-x-auto {
@@ -1058,6 +1045,16 @@
       width: 300px;
     }
   }
+  .lg\:max-w-\[20\%\] {
+    @media (width >= 64rem) {
+      max-width: 20%;
+    }
+  }
+  .lg\:max-w-\[80\%\] {
+    @media (width >= 64rem) {
+      max-width: 80%;
+    }
+  }
   .lg\:min-w-\[280px\] {
     @media (width >= 64rem) {
       min-width: 280px;
@@ -1153,13 +1150,13 @@
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-    --tw-duration: 600ms;
-    transition-duration: 600ms;
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
   .submenu-open {
-    max-height: calc(var(--spacing) * 40);
+    max-height: 100%;
     opacity: 100%;
   }
   .submenu-closed {
@@ -1218,11 +1215,6 @@
   initial-value: skewY(0);
 }
 @property --tw-space-y-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-space-x-reverse {
   syntax: "*";
   inherits: false;
   initial-value: 0;
@@ -1323,7 +1315,6 @@
       --tw-skew-x: skewX(0);
       --tw-skew-y: skewY(0);
       --tw-space-y-reverse: 0;
-      --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;

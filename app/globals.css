@@ -20,11 +20,11 @@
 
 @layer utilities {
   .submenu-transition {
-    @apply overflow-hidden transition-all duration-600 ease-in-out;
+    @apply overflow-hidden transition-all duration-300 ease-in-out;
   }
 
   .submenu-open {
-    @apply max-h-40 opacity-100;
+    @apply max-h-full opacity-100;
   }
 
   .submenu-closed {

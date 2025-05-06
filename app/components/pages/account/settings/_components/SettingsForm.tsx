@@ -35,11 +35,11 @@ const SettingsForm = () => {
         initialValues={personalInfo}
         onSubmit={submitForm}
       >
-        <Form className="mt-6">
+        <Form className="mt-6 space-y-6">
           <SettingsHeader />
-          <div className="flex gap-7">
+          <div className="flex flex-col lg:flex-row gap-7">
             <PersonalInfo />
-            <div className="space-y-7 w-full max-w-[20%]">
+            <div className="space-y-7 w-full lg:max-w-[20%]">
               <UserPhotoUplaod
                 setPersonalInfo={setPersonalInfo}
                 userPhoto={personalInfo.image as File}
