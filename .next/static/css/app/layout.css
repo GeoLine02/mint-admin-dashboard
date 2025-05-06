@@ -42,6 +42,8 @@
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -61,10 +63,7 @@
     --color-hover-purple: #f3ecfe;
     --color-light-gray: #dbdcde;
     --color-surface-gray: #f4f5f9;
-    --color-medium-gray: #89868D
-
-  
-  --breakpoint-3xl: 119rem;
+    --color-medium-gray: #89868d;
     --font-lato: "Lato", "sans-serif";
   }
 }
@@ -238,6 +237,18 @@
   .col-span-1 {
     grid-column: span 1 / span 1;
   }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .col-start-1 {
+    grid-column-start: 1;
+  }
+  .col-start-2 {
+    grid-column-start: 2;
+  }
+  .col-end-1 {
+    grid-column-end: 1;
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -373,6 +384,9 @@
   .max-w-\[700px\] {
     max-width: 700px;
   }
+  .max-w-\[900px\] {
+    max-width: 900px;
+  }
   .max-w-md {
     max-width: var(--container-md);
   }
@@ -414,6 +428,9 @@
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .flex-col {
     flex-direction: column;
@@ -1139,6 +1156,48 @@
   }
   .\32 xl\:text-xl {
     @media (width >= 96rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .\33 xl\:mt-0 {
+    @media (width >= 119rem) {
+      margin-top: calc(var(--spacing) * 0);
+    }
+  }
+  .\33 xl\:block {
+    @media (width >= 119rem) {
+      display: block;
+    }
+  }
+  .\33 xl\:flex {
+    @media (width >= 119rem) {
+      display: flex;
+    }
+  }
+  .\33 xl\:w-\[20\%\] {
+    @media (width >= 119rem) {
+      width: 20%;
+    }
+  }
+  .\33 xl\:w-\[80\%\] {
+    @media (width >= 119rem) {
+      width: 80%;
+    }
+  }
+  .\33 xl\:w-full {
+    @media (width >= 119rem) {
+      width: 100%;
+    }
+  }
+  .\33 xl\:text-7xl {
+    @media (width >= 119rem) {
+      font-size: var(--text-7xl);
+      line-height: var(--tw-leading, var(--text-7xl--line-height));
+    }
+  }
+  .\33 xl\:text-xl {
+    @media (width >= 119rem) {
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
     }

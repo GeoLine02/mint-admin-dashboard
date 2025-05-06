@@ -1,7 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/pages/profile/profile_overview/page": "app/pages/profile/profile_overview/page.js",
-  "/pages/account/settings/page": "app/pages/account/settings/page.js",
-  "/analytics/page": "app/analytics/page.js",
-  "/pages/users/new_users/page": "app/pages/users/new_users/page.js"
+  "/pages/account/billing/page": "app/pages/account/billing/page.js",
+  "/pages/account/invoice/page": "app/pages/account/invoice/page.js"
 }

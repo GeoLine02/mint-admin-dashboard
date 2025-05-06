@@ -10,3 +10,11 @@ export interface IPersonalInformation {
   bio?: string;
   image?: File | null;
 }
+
+export interface IBillingInformation {
+  paymnetMethod: "visa" | "paypal";
+  cardHolderName: string;
+  billingAddress: string;
+  zipCode: string;
+  city: string;
+}
