@@ -20,6 +20,7 @@ interface InputProps {
   hasBorder?: boolean;
   rounded?: "full" | "md" | "lg";
   checked?: boolean;
+  label?: string;
 }
 
 const Input = ({
@@ -33,9 +34,10 @@ const Input = ({
   hasBorder,
   rounded,
   checked,
+  label,
 }: InputProps) => {
   const inputStyles = classNames("input", {
-    "border-2 border-light-gray": hasBorder,
+    "border-2 border-light-gray focus:border-primary-purple": hasBorder,
     "rounded-md": rounded === "md",
     "rounded-lg": rounded === "lg",
     "rounded-full": rounded === "full",
@@ -61,16 +63,19 @@ const Input = ({
         type === "password" ||
         type === "submit" ||
         type === "url") && (
-        <div className={`flex items-center gap-3 p-2 ${inputStyles}`}>
-          {icon && <span>{icon}</span>}
-          <input
-            name={name}
-            onChange={onChange}
-            placeholder={placeholder}
-            type={type}
-            value={value}
-            className={`w-full ${className} border-none outline-none`}
-          />
+        <div>
+          {label && <label htmlFor={name}>{label}</label>}
+          <div className={`flex items-center gap-3 p-2 focus ${inputStyles}`}>
+            {icon && <span>{icon}</span>}
+            <input
+              name={name}
+              onChange={onChange}
+              placeholder={placeholder}
+              type={type}
+              value={value}
+              className={`w-full ${className} border-none outline-none`}
+            />
+          </div>
         </div>
       )}
 

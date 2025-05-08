@@ -14,7 +14,7 @@ const MenuList = () => {
   };
 
   return (
-    <div>
+    <div className="h-full">
       {routesConfig.map((menuItem: IRoute) => {
         const { Icon, accessorKey, subMenu, title } = menuItem;
         const isOpen = collapsedRoute === accessorKey;
@@ -30,11 +30,11 @@ const MenuList = () => {
 
             <div
               className={clsx(
-                "submenu-transition",
-                isOpen ? "submenu-open" : "submenu-closed"
+                "menu-transition",
+                isOpen ? "menu-open" : "menu-closed"
               )}
             >
-              <div className="flex flex-col items-start px-4 py-2 gap-2">
+              <div className="flex flex-col px-4 py-2 gap-2">
                 {subMenu.map((sub) => (
                   <SubMenuItem key={sub.accessorKey} item={sub} />
                 ))}

@@ -75,6 +75,32 @@ const routesConfig: IRoute[] = [
           },
         ],
       },
+      {
+        accessorKey: "account",
+        title: "Account",
+        subMenu: [
+          {
+            accessorKey: "settings",
+            title: "Settings",
+            path: "/pages/account/settings",
+          },
+          {
+            accessorKey: "billing",
+            title: "Billing",
+            path: "/pages/account/billing",
+          },
+          {
+            accessorKey: "invoice",
+            title: "Invoice",
+            path: "/pages/account/invoice",
+          },
+          {
+            accessorKey: "security",
+            title: "Security",
+            path: "/pages/account/security",
+          },
+        ],
+      },
     ],
   },
 ];
