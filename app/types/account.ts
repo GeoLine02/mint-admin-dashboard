@@ -18,3 +18,9 @@ export interface IBillingInformation {
   zipCode: string;
   city: string;
 }
+
+export interface ISecuritySettings {
+  currnetPassword: string;
+  newPassword: string;
+  confirmPassword: string;
+}

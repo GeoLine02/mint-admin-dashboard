@@ -94,6 +94,11 @@ const routesConfig: IRoute[] = [
             title: "Invoice",
             path: "/pages/account/invoice",
           },
+          {
+            accessorKey: "security",
+            title: "Security",
+            path: "/pages/account/security",
+          },
         ],
       },
     ],

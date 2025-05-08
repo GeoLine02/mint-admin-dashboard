@@ -30,8 +30,8 @@ const MenuList = () => {
 
             <div
               className={clsx(
-                "submenu-transition",
-                isOpen ? "submenu-open" : "submenu-closed"
+                "menu-transition",
+                isOpen ? "menu-open" : "menu-closed"
               )}
             >
               <div className="flex flex-col px-4 py-2 gap-2">

@@ -6,15 +6,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/pages/account/billing/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pages/account/billing/page.js"
+      "static/chunks/app/page.js"
     ],
-    "/pages/account/invoice/page": [
+    "/pages/account/security/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pages/account/invoice/page.js"
+      "static/chunks/app/pages/account/security/page.js"
     ]
   }
 }

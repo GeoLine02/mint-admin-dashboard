@@ -53,6 +53,7 @@ const PaymentForm = ({ billingInfo, setBillingInfo }: PaymentFormProps) => {
                   name="cardHolderName"
                   type="text"
                   label="Card holder name"
+                  placeholder="Jhon Walden"
                 />
                 <FormikInput
                   hasBorder
@@ -60,6 +61,7 @@ const PaymentForm = ({ billingInfo, setBillingInfo }: PaymentFormProps) => {
                   name="billingAddress"
                   type="text"
                   label="Billing address"
+                  placeholder="Germany"
                 />
               </div>
               <div className="col-start-2 gap-5">
@@ -69,6 +71,7 @@ const PaymentForm = ({ billingInfo, setBillingInfo }: PaymentFormProps) => {
                   name="zipCode"
                   type="text"
                   label="Zip code"
+                  placeholder="6789123"
                 />
                 <FormikInput
                   hasBorder
@@ -76,6 +79,7 @@ const PaymentForm = ({ billingInfo, setBillingInfo }: PaymentFormProps) => {
                   name="city"
                   type="text"
                   label="City"
+                  placeholder="Berlain"
                 />
               </div>
             </div>
