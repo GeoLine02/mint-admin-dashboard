@@ -110,6 +110,11 @@ const routesConfig: IRoute[] = [
             path: "/pages/projects/new_project",
             title: "New project",
           },
+          {
+            accessorKey: "pricing",
+            path: "/pages/projects/pricing",
+            title: "Pricing",
+          },
         ],
       },
     ],

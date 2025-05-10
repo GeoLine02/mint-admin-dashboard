@@ -1,4 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/pages/projects/new_project/page": "app/pages/projects/new_project/page.js"
+  "/pages/projects/new_project/page": "app/pages/projects/new_project/page.js",
+  "/pages/projects/pricing/page": "app/pages/projects/pricing/page.js"
 }
