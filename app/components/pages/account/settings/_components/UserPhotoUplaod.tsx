@@ -26,7 +26,7 @@ const UserPhotoUplaod = ({
   };
 
   return (
-    <Card className="space-y-3 w-full ">
+    <Card className="space-y-3 w-full">
       <div className="px-6 py-4 border-b border-b-medium-gray">
         <h1 className="text-lg">Your Photo</h1>
       </div>

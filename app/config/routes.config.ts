@@ -101,6 +101,17 @@ const routesConfig: IRoute[] = [
           },
         ],
       },
+      {
+        accessorKey: "projects",
+        title: "Projects",
+        subMenu: [
+          {
+            accessorKey: "newProject",
+            path: "/pages/projects/new_project",
+            title: "New project",
+          },
+        ],
+      },
     ],
   },
 ];

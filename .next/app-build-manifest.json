@@ -11,10 +11,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/pages/account/security/page": [
+    "/pages/projects/new_project/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pages/account/security/page.js"
+      "static/chunks/app/pages/projects/new_project/page.js"
     ]
   }
 }
