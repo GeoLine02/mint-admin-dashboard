@@ -6,15 +6,15 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/page": [
+    "/pages/projects/new_project/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/pages/projects/new_project/page.js"
     ],
-    "/pages/account/security/page": [
+    "/pages/projects/pricing/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/pages/account/security/page.js"
+      "static/chunks/app/pages/projects/pricing/page.js"
     ]
   }
 }

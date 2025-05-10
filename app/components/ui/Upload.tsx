@@ -6,11 +6,13 @@ import { useRef, useState } from "react";
 interface UploadProps {
   onChange?: (file: File | null) => void;
   label?: string;
+  className?: string;
 }
 
 const Upload = ({
   onChange,
   label = "Click to upload or drag and drop",
+  className,
 }: UploadProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
@@ -28,7 +30,9 @@ const Upload = ({
   };
 
   return (
-    <div className="border-2 border-dashed border-active-purple rounded-xl px-6 py-8 text-center bg-white hover:border-primary-purple transition-all duration-200 cursor-pointer w-full max-w-md mx-auto">
+    <div
+      className={`border-2 border-dashed border-active-purple rounded-xl px-6 py-8 text-center bg-white hover:border-primary-purple transition-all duration-200 cursor-pointer w-full max-w-md mx-auto ${className}`}
+    >
       <input
         type="file"
         accept="image/*"

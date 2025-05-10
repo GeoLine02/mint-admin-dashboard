@@ -14,7 +14,7 @@ interface ButtonProps {
   title: string;
   className?: string;
   onClick?: () => void;
-  type: "button" | "submit";
+  type: "button" | "submit" | "reset";
   icon?: React.ReactNode;
   disabled?: boolean;
 }
