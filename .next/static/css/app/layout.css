@@ -416,9 +416,6 @@
   .max-w-\[400px\] {
     max-width: 400px;
   }
-  .max-w-\[446px\] {
-    max-width: 446px;
-  }
   .max-w-\[580px\] {
     max-width: 580px;
   }
@@ -463,18 +460,6 @@
   }
   .animate-pulse {
     animation: var(--animate-pulse);
-  }
-  .\!cursor-crosshair {
-    cursor: crosshair !important;
-  }
-  .\!cursor-default {
-    cursor: default !important;
-  }
-  .cursor-crosshair {
-    cursor: crosshair;
-  }
-  .cursor-default {
-    cursor: default;
   }
   .cursor-pointer {
     cursor: pointer;
