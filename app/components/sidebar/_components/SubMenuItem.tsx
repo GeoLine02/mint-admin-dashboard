@@ -40,8 +40,8 @@ const SubMenuItem = ({ item }: Props) => {
       {hasChildren && (
         <div
           className={clsx(
-            "submenu-transition ml-4", // <-- indent nested items
-            isOpen ? "submenu-open" : "submenu-closed"
+            "menu-transition ml-4", // <-- indent nested items
+            isOpen ? "menu-open" : "menu-closed"
           )}
         >
           <div className="flex flex-col items-start px-2 py-1 gap-2">
