@@ -296,6 +296,9 @@
   .ml-5 {
     margin-left: calc(var(--spacing) * 5);
   }
+  .box-content {
+    box-sizing: content-box;
+  }
   .flex {
     display: flex;
   }
@@ -313,6 +316,15 @@
   }
   .h-11 {
     height: calc(var(--spacing) * 11);
+  }
+  .h-\[30px\] {
+    height: 30px;
+  }
+  .h-\[50px\] {
+    height: 50px;
+  }
+  .h-\[100px\] {
+    height: 100px;
   }
   .h-\[200px\] {
     height: 200px;
@@ -332,6 +344,9 @@
   .max-h-\[380px\] {
     max-height: 380px;
   }
+  .min-h-full {
+    min-height: 100%;
+  }
   .min-h-screen {
     min-height: 100vh;
   }
@@ -347,8 +362,14 @@
   .w-9 {
     width: calc(var(--spacing) * 9);
   }
+  .w-11 {
+    width: calc(var(--spacing) * 11);
+  }
   .w-36 {
     width: calc(var(--spacing) * 36);
+  }
+  .w-52 {
+    width: calc(var(--spacing) * 52);
   }
   .w-\[34px\] {
     width: 34px;
@@ -413,6 +434,9 @@
   .max-w-\[330px\] {
     max-width: 330px;
   }
+  .max-w-\[357px\] {
+    max-width: 357px;
+  }
   .max-w-\[400px\] {
     max-width: 400px;
   }
@@ -427,6 +451,9 @@
   }
   .max-w-\[750px\] {
     max-width: 750px;
+  }
+  .max-w-full {
+    max-width: 100%;
   }
   .max-w-md {
     max-width: var(--container-md);
@@ -460,6 +487,9 @@
   }
   .animate-pulse {
     animation: var(--animate-pulse);
+  }
+  .cursor-grab {
+    cursor: grab;
   }
   .cursor-pointer {
     cursor: pointer;
@@ -629,6 +659,12 @@
   .overflow-x-auto {
     overflow-x: auto;
   }
+  .overflow-x-hidden {
+    overflow-x: hidden;
+  }
+  .overflow-y-auto {
+    overflow-y: auto;
+  }
   .rounded {
     border-radius: 0.25rem;
   }
@@ -652,6 +688,10 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
+  }
+  .rounded-t-lg {
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
   }
   .rounded-tr-sm {
     border-top-right-radius: var(--radius-sm);
@@ -747,6 +787,9 @@
   }
   .bg-light-gray {
     background-color: var(--color-light-gray);
+  }
+  .bg-medium-gray {
+    background-color: var(--color-medium-gray);
   }
   .bg-primary-purple {
     background-color: var(--color-primary-purple);
@@ -853,11 +896,17 @@
   .py-\[50px\] {
     padding-block: 50px;
   }
+  .pb-3 {
+    padding-bottom: calc(var(--spacing) * 3);
+  }
   .pb-5 {
     padding-bottom: calc(var(--spacing) * 5);
   }
   .pb-6 {
     padding-bottom: calc(var(--spacing) * 6);
+  }
+  .pb-9 {
+    padding-bottom: calc(var(--spacing) * 9);
   }
   .pl-2 {
     padding-left: calc(var(--spacing) * 2);

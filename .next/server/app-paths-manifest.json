@@ -1,7 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/pages/users/new_users/page": "app/pages/users/new_users/page.js",
-  "/pages/account/billing/page": "app/pages/account/billing/page.js",
-  "/pages/account/security/page": "app/pages/account/security/page.js",
-  "/pages/projects/pricing/page": "app/pages/projects/pricing/page.js"
+  "/applications/kanban/page": "app/applications/kanban/page.js"
 }
