@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "@/app/components/ui/Card";
 import {
   WatchLater,
@@ -8,11 +10,10 @@ import {
 } from "@mui/icons-material";
 import TeamMemberIcon from "@/public/person2Icon.png";
 import Image from "next/image";
-import { CSS } from "@dnd-kit/utilities";
 import { useDraggable } from "@dnd-kit/core";
 
 interface TaskCardProps {
-  id: number;
+  id: string;
   taskTitle: string;
   taskDeadline: string;
   teamName: string;
@@ -32,9 +33,13 @@ const TaskCard = ({
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id: id,
   });
-  const style = {
-    transform: CSS.Translate.toString(transform),
-  };
+
+  const style = transform
+    ? {
+        transform: `translate(${transform.x}px, ${transform.y}px)`,
+        opacity: transform ? 0.8 : 1,
+      }
+    : undefined;
 
   return (
     <Card
@@ -45,7 +50,10 @@ const TaskCard = ({
       className="w-full p-3 cursor-grab space-y-5"
     >
       <section className="flex justify-between items-center">
-        <h1>{taskTitle}</h1>
+        <div>
+          <input type="text" hidden />
+          <h1>{taskTitle}</h1>
+        </div>
         <div className="flex items-center gap-3 text-medium-gray">
           <WatchLater />
           <span>{taskDeadline}</span>

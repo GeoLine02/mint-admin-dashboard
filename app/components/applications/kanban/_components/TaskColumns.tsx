@@ -1,25 +1,28 @@
-import { ITaskColumn } from "@/app/types/kanban";
+"use client";
+
+import { ColumnType, Task } from "@/app/types/kanban";
 import TaskColumn from "./TaskColumn";
 import Card from "@/app/components/ui/Card";
 import AddIcon from "@mui/icons-material/Add";
 
 interface TaskColumnsProps {
-  taskColumns: ITaskColumn[];
-  setTaskColumns: React.Dispatch<React.SetStateAction<ITaskColumn[]>>;
+  taskColumns: ColumnType[];
   handleAddTask: () => void;
   handleAddColumn: () => void;
+  tasks: Task[];
 }
 
 const TaskColumns = ({
   taskColumns,
   handleAddTask,
-  setTaskColumns,
   handleAddColumn,
+  tasks,
 }: TaskColumnsProps) => {
   return (
     <div className="flex gap-5 overflow-y-auto overflow-x-hidden max-w-full">
       {taskColumns.map((column) => (
         <TaskColumn
+          tasks={tasks.filter((task) => task.status === column.id)}
           handleAddTask={handleAddTask}
           taskColumn={column}
           key={column.id}

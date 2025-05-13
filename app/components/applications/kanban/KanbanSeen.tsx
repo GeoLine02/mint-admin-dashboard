@@ -5,56 +5,33 @@ import Card from "../../ui/Card";
 import KanbanFilters from "./_components/KanbanFilters";
 import KanbanHeader from "./_components/KanbanHeader";
 import TaskColumns from "./_components/TaskColumns";
-import { ITask, ITaskColumn } from "@/app/types/kanban";
-import { TaskColumnsData } from "@/app/mock/kanban/kanbanData";
+import { ColumnType, Task } from "@/app/types/kanban";
 import { DndContext, DragEndEvent } from "@dnd-kit/core";
+import { COLUMNS, INITIAL_TASKS } from "@/app/mock/kanban/kanbanData";
 
 const KanbanSeen = () => {
-  const [taskColumns, setTaskColumns] =
-    useState<ITaskColumn[]>(TaskColumnsData);
+  const [columns, setColumns] = useState<ColumnType[]>(COLUMNS);
+
+  const [tasks, setTasks] = useState<Task[]>(INITIAL_TASKS);
 
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
-    if (!over || active.id === over.id) return;
 
-    const activeId = active.id as number;
-    const overId = over.id as number;
+    if (!over) return;
 
-    setTaskColumns((prevColumns) => {
-      let activeColumnIndex = -1;
-      let overColumnIndex = -1;
-      let activeTaskIndex = -1;
-      let overTaskIndex = -1;
-      let activeTask: ITask | null = null;
+    const taskId = active.id as string;
+    const newStatus = over.id as Task["status"];
 
-      // Find source and target positions
-      const columnsCopy = prevColumns.map((column, colIndex) => {
-        const taskIndex = column.tasks.findIndex((t) => t.id === activeId);
-        if (taskIndex !== -1) {
-          activeColumnIndex = colIndex;
-          activeTaskIndex = taskIndex;
-          activeTask = column.tasks[taskIndex];
-        }
-
-        const overIndex = column.tasks.findIndex((t) => t.id === overId);
-        if (overIndex !== -1) {
-          overColumnIndex = colIndex;
-          overTaskIndex = overIndex;
-        }
-
-        return { ...column, tasks: [...column.tasks] };
-      });
-
-      if (!activeTask) return prevColumns;
-
-      // Remove the task from its original column
-      columnsCopy[activeColumnIndex].tasks.splice(activeTaskIndex, 1);
-
-      // Insert into new column at the position of the target task
-      columnsCopy[overColumnIndex].tasks.splice(overTaskIndex, 0, activeTask);
-
-      return columnsCopy;
-    });
+    setTasks(() =>
+      tasks.map((task) =>
+        task.id === taskId
+          ? {
+              ...task,
+              status: newStatus,
+            }
+          : task
+      )
+    );
   };
 
   const handleaddTask = () => {};
@@ -69,8 +46,8 @@ const KanbanSeen = () => {
         <TaskColumns
           handleAddColumn={handleAddColumn}
           handleAddTask={handleaddTask}
-          setTaskColumns={setTaskColumns}
-          taskColumns={taskColumns}
+          taskColumns={columns}
+          tasks={tasks}
         />
       </DndContext>
     </Card>

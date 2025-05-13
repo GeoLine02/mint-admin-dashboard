@@ -1,3 +1,4 @@
 {
-  "/applications/kanban/page": "app/applications/kanban/page.js"
+  "/applications/kanban/page": "app/applications/kanban/page.js",
+  "/page": "app/page.js"
 }
