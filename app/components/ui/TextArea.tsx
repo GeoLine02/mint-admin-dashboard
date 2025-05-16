@@ -19,7 +19,7 @@ const Textarea: React.FC<TextareaProps> = ({
       {label && <label className="font-medium">{label}</label>}
 
       <textarea
-        className={`border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-purple resize-none ${
+        className={`border-2 border-light-gray rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-purple resize-none ${
           error ? "border-red-500" : ""
         } ${className}`}
         {...props}

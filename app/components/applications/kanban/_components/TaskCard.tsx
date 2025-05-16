@@ -15,7 +15,7 @@ import { useDraggable } from "@dnd-kit/core";
 interface TaskCardProps {
   id: string;
   taskTitle: string;
-  taskDeadline: string;
+  taskDeadline: number;
   teamName: string;
   clipCount: number;
   commentCount: number;
@@ -56,7 +56,7 @@ const TaskCard = ({
         </div>
         <div className="flex items-center gap-3 text-medium-gray">
           <WatchLater />
-          <span>{taskDeadline}</span>
+          <span>{taskDeadline} Days</span>
         </div>
       </section>
       <section className="flex items-center gap-3">

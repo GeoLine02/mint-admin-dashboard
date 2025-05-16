@@ -9,14 +9,15 @@ import { Task } from "@/app/types/kanban";
 
 interface TasksProps {
   tasks: Task[];
-  handleAddTask: () => void;
+  toggleAddTask: (columnId: string) => void;
+  columnId: string;
 }
 
 const Tasks = forwardRef<HTMLDivElement, TasksProps>(
-  ({ tasks, handleAddTask }, ref) => {
+  ({ tasks, toggleAddTask, columnId }, ref) => {
     return (
       <div className="p-5 space-y-5">
-        <div onClick={handleAddTask} className="w-full">
+        <div onClick={() => toggleAddTask(columnId)} className="w-full">
           <Card className="flex items-center justify-center border-dashed border-2 w-full h-[50px] cursor-pointer">
             <AddIcon className="text-medium-gray" />
           </Card>
