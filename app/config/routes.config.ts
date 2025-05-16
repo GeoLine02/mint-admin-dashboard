@@ -1,7 +1,6 @@
 import HomeIcon from "@mui/icons-material/Home";
-import DescriptionIcon from "@mui/icons-material/Description";
-import { SvgIconComponent } from "@mui/icons-material";
-
+// import DescriptionIcon from "@mui/icons-material/Description";
+import { Description, SvgIconComponent, FolderCopy } from "@mui/icons-material";
 export interface ISubMenu {
   title: string;
   accessorKey: string;
@@ -41,7 +40,7 @@ const routesConfig: IRoute[] = [
   {
     title: "Pages",
     accessorKey: "pages",
-    Icon: DescriptionIcon,
+    Icon: Description,
     subMenu: [
       {
         title: "Profile",
@@ -116,6 +115,18 @@ const routesConfig: IRoute[] = [
             title: "Pricing",
           },
         ],
+      },
+    ],
+  },
+  {
+    accessorKey: "applications",
+    title: "Applications",
+    Icon: FolderCopy,
+    subMenu: [
+      {
+        accessorKey: "kanban",
+        title: "Kanban",
+        path: "/applications/kanban",
       },
     ],
   },
