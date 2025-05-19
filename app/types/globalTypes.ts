@@ -1,6 +1,7 @@
 import { StaticImageData } from "next/image";
 
 export interface IProject {
+  userId: number;
   projectImage: StaticImageData;
   projectName: string;
   projectMembers: string[];

@@ -6,6 +6,8 @@ import getCapitalizedPathName from "@/app/utils/locationPathCapitalizer";
 
 const Header = () => {
   const pathName = usePathname();
+  console.log(pathName);
+  if (pathName === "/signin" || pathName === "/signup") return null;
 
   return (
     <header className="w-full py-[30px]">

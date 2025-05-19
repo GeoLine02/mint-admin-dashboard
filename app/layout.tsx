@@ -3,6 +3,7 @@ import "./globals.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import Header from "./components/header/Header";
 import { Lato } from "next/font/google";
+import Providers from "./Providers";
 export const metadata: Metadata = {
   title: "Mint",
   description: "Mint Admin panel",
@@ -26,8 +27,9 @@ export default function RootLayout({
         <Sidebar />
         <div className="w-full px-[30px] bg-surface-gray">
           <Header />
-          <main>{children}</main>
-          <footer></footer>
+          <Providers>
+            <main>{children}</main>
+          </Providers>
         </div>
       </body>
     </html>

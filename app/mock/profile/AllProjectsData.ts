@@ -7,6 +7,7 @@ import { IProjectithId } from "@/app/types/globalTypes";
 
 export const projectsData: IProjectithId[] = [
   {
+    userId: 1,
     id: 1,
     projectImage: IcProjectIcon,
     projectName: "Design tools",
@@ -17,6 +18,7 @@ export const projectsData: IProjectithId[] = [
     participantCount: 10,
   },
   {
+    userId: 1,
     id: 2,
     projectImage: PhotoshopIcon,
     projectName: "Premium Support",
@@ -27,6 +29,7 @@ export const projectsData: IProjectithId[] = [
     participantCount: 23,
   },
   {
+    userId: 1,
     id: 3,
     projectImage: SlackProjectIcon,
     projectName: "Slack Bot",
@@ -37,6 +40,7 @@ export const projectsData: IProjectithId[] = [
     participantCount: 11,
   },
   {
+    userId: 1,
     id: 4,
     projectImage: LinkedInProjectIcon,
     projectName: "Developer First",
@@ -47,6 +51,7 @@ export const projectsData: IProjectithId[] = [
     participantCount: 30,
   },
   {
+    userId: 1,
     id: 5,
     projectImage: IlustratorProjectIcon,
     projectName: "Looking great",
@@ -57,6 +62,7 @@ export const projectsData: IProjectithId[] = [
     participantCount: 30,
   },
   {
+    userId: 1,
     id: 6,
     projectImage: PhotoshopIcon,
     projectName: "Premium Support",
@@ -67,6 +73,7 @@ export const projectsData: IProjectithId[] = [
     participantCount: 23,
   },
   {
+    userId: 1,
     id: 7,
     projectImage: IlustratorProjectIcon,
     projectName: "Looking great",
@@ -77,6 +84,7 @@ export const projectsData: IProjectithId[] = [
     participantCount: 30,
   },
   {
+    userId: 1,
     id: 8,
     projectImage: IcProjectIcon,
     projectName: "Design tools",
