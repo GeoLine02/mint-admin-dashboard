@@ -4,7 +4,7 @@ import Card from "@/app/components/ui/Card";
 
 const Withdraw = () => {
   return (
-    <Card className="flex items-center justify-between p-[30px] w-full">
+    <Card className="flex items-center justify-between p-5 xl:p-[30px] w-full">
       {metricsData.map((metric) => (
         <div key={metric.title}>
           <MetricCard

@@ -21,13 +21,17 @@ const MetricCard = ({
 }: MetricCardProps) => {
   return (
     <div className="flex flex-col gap-3">
-      <div className="flex items-center gap-4">
-        <h1 className="text-lg 2xl:text-xl">{title}</h1>
+      {/* Top section with title and change badge */}
+      <div className="flex flex-col xl:flex-row xl:items-center gap-4">
+        <h2 className="text-base lg:text-lg 2xl:text-xl font-semibold max-w-[100px]">
+          {title}
+        </h2>
+
         <div
           style={{
             background: changeBtnBgColor,
           }}
-          className="flex items-center rounded-lg p-0.5 lg:p-1"
+          className="flex items-center rounded-lg px-2 py-1 w-fit"
         >
           {changeType === "increase" && (
             <KeyboardArrowUpIcon sx={{ color: changeBtnTextColor }} />
@@ -39,14 +43,20 @@ const MetricCard = ({
             style={{
               color: changeBtnTextColor,
             }}
-            className="font-medium"
+            className="font-medium text-sm lg:text-base"
           >
             {change}
           </span>
         </div>
       </div>
-      <h1 className="text-3xl text-primary-purple">{value}</h1>
-      <p className="text-[#89868D]">{subText}</p>
+
+      {/* Main value */}
+      <div className="text-2xl lg:text-3xl 2xl:text-4xl font-bold text-primary-purple">
+        {value}
+      </div>
+
+      {/* Subtitle */}
+      <p className="text-sm lg:text-base text-[#89868D]">{subText}</p>
     </div>
   );
 };
