@@ -7,20 +7,18 @@ import {
   useLayoutEffect,
   useCallback,
 } from "react";
-import {
-  ISigInCredentials,
-  //   ISignUpCredentials,
-} from "../types/auth";
+import { ISigInCredentials, ISignUpCredentials } from "../types/auth";
 import { JWTPayload, jwtVerify } from "jose";
 import { login as loginService } from "@/app/services/auth";
-import { useRouter } from "next/navigation";
+import { signup as signupService } from "@/app/services/auth";
+import { usePathname, useRouter } from "next/navigation";
 
 const secret = new TextEncoder().encode("super-secret-key");
 
 interface AuthContextType {
   user: JWTPayload | null;
   login: (credentials: ISigInCredentials) => Promise<void>;
-  //   signup: (credentials: ISignUpCredentials) => Promise<void>;
+  signup: (credentials: ISignUpCredentials) => Promise<void>;
   logout: () => void;
   isAuthenticated: boolean;
 }
@@ -29,14 +27,15 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<null | JWTPayload>(null);
-  const [loading, setLoading] = useState(true); // new
   const router = useRouter();
+  const location = usePathname();
 
   const login = async (credentials: ISigInCredentials) => {
     const token = await loginService(credentials);
     const { payload } = await jwtVerify(token, secret);
     setUser(payload);
-    localStorage.setItem("accessToken", token); // <— make sure you save it
+    localStorage.setItem("accessToken", token);
+    router.push("/");
   };
 
   const logout = useCallback(() => {
@@ -45,37 +44,47 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     router.replace("/signin");
   }, [router]);
 
+  const signup = async (credentials: ISignUpCredentials) => {
+    const res = await signupService(credentials);
+    console.log("res: ", res);
+  };
+
   useLayoutEffect(() => {
     const checkToken = async () => {
+      const publicRoutes = ["/signin", "/signup"];
+      const isPublicRoute = publicRoutes.includes(location);
+
       const token = localStorage.getItem("accessToken");
 
       if (!token) {
-        router.replace("/signin");
-        setLoading(false);
+        if (!isPublicRoute) {
+          router.replace("/signin");
+        }
         return;
       }
 
       try {
         const { payload } = await jwtVerify(token, secret);
         setUser(payload);
+
+        if (isPublicRoute) {
+          router.replace("/");
+        }
       } catch (err) {
         console.error("Token verification failed:", err);
         logout();
-      } finally {
-        setLoading(false); // stop blocking render
       }
     };
 
     checkToken();
-  }, [router, logout]);
-
-  if (loading) return null; // Prevent initial flicker
+  }, [router, logout, location]);
 
   return (
     <AuthContext.Provider
       value={{
         user,
         login,
+        signup,
         logout,
         isAuthenticated: !!user,
       }}

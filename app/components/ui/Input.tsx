@@ -25,6 +25,7 @@ interface InputProps {
   rounded?: "full" | "md" | "lg";
   checked?: boolean;
   label?: string;
+  defaultValue?: string;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
@@ -43,6 +44,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       rounded,
       checked,
       label,
+      defaultValue,
     },
     ref
   ) => {
@@ -86,6 +88,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
                 placeholder={placeholder}
                 type={type}
                 value={value}
+                defaultValue={defaultValue}
                 className={`w-full ${className} border-none outline-none`}
               />
             </div>

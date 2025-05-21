@@ -11,7 +11,7 @@ const ActiveUsersBarChart = ({ chartData }: ActiveUsersBarChartProps) => {
   const theme = useTheme();
   const isLaptop = useMediaQuery(theme.breakpoints.down("xl"));
 
-  const chartWidth = isLaptop ? 625 : 1000;
+  const chartWidth = isLaptop ? 625 : 1200;
   const chartHeight = isLaptop ? 237 : 450;
   return (
     <div className="overflow-x-auto w-full">

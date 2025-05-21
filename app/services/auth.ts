@@ -1,6 +1,6 @@
 // services/auth.ts
 import { SignJWT } from "jose";
-import { ISigInCredentials } from "../types/auth";
+import { ISigInCredentials, ISignUpCredentials } from "../types/auth";
 import { users } from "../mock/fakeUsers/fakeUsers";
 
 const secret = new TextEncoder().encode("super-secret-key");
@@ -24,7 +24,26 @@ export const login = async (credentials: ISigInCredentials) => {
     .setExpirationTime("2h")
     .sign(secret);
 
-  localStorage.setItem("accessToken", JSON.stringify(token));
+  localStorage.setItem("accessToken", token);
 
   return token;
+};
+
+export const signup = async (credentials: ISignUpCredentials) => {
+  const existedEmail = users.find((user) => user.email === credentials.email);
+  if (existedEmail) {
+    throw new Error("User with this email already exist");
+  }
+
+  const lastUserId = users[users.length - 1].userId ?? 0;
+
+  users.push({
+    email: credentials.email,
+    password: credentials.password,
+    role: "user",
+    userId: lastUserId + 1,
+    username: "",
+  });
+
+  localStorage.setItem("users", JSON.stringify(credentials));
 };

@@ -5,12 +5,12 @@ import SignUpBanner from "@/public/SignupBanner.png";
 
 const SignUpSeen = () => {
   return (
-    <div className="px-20">
+    <div className="p-3 lg:px-20">
       <Card className="p-5 w-full max-w-[1279px] mx-auto flex justify-center">
-        <div className="w-1/2 flex items-center justify-center">
+        <div className="w-full lg:w-1/2 flex items-center justify-center">
           <SignUpForm />
         </div>
-        <div className="w-1/2">
+        <div className="hidden lg:block w-1/2">
           <Image alt="signup banner" src={SignUpBanner} />
         </div>
       </Card>

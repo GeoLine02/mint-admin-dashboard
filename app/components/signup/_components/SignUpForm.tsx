@@ -4,21 +4,19 @@ import withFormik from "@/app/HOC/WithFormik";
 import { ISignUpCredentials } from "@/app/types/auth";
 import { Form, Formik } from "formik";
 import Input from "../../ui/Input";
-import { createToken } from "@/app/utils/jose";
 import Button from "../../ui/Button";
 import { signUpSchema } from "@/app/validations/auth/authValidations";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/app/context/AuthContext";
 
 const SignUpForm = () => {
   const navigate = useRouter();
 
+  const { signup } = useAuth();
+
   const onSubmit = async (values: ISignUpCredentials) => {
     try {
-      const accessToken = await createToken(values);
-      console.log(accessToken);
-      if (accessToken) {
-        localStorage.setItem("accessToken", accessToken);
-      }
+      await signup(values);
     } catch (error) {
       console.log("error", error);
     }
@@ -28,7 +26,7 @@ const SignUpForm = () => {
   const FormikButton = withFormik(Button);
 
   return (
-    <div className=" min-w-[330px] max-w-[330px]">
+    <div className="min-w-[330px] max-w-[330px]">
       <Formik
         validationSchema={signUpSchema}
         onSubmit={onSubmit}
