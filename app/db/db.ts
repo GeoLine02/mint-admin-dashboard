@@ -1,6 +1,6 @@
 import MobileIcon from "@/public/MobileIcon.png";
 import DesktopIcon from "@/public/DesktopIcon.png";
-import TvIcon from "@/public/TvIcon.png";
+import TvIcon from "@/public/TVIcon.png";
 import TabletIcon from "@/public/TabletIcon.png";
 import PakistanFlag from "@/public/PakistanFlag.png";
 import GermanyFlag from "@/public/GermanyFlag.png";
