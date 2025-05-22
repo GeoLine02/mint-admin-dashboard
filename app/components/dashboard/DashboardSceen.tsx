@@ -1,4 +1,4 @@
-import ActiveUsers from "./_components/ActiveUsers/ActiveUsers";
+import ActiveUsers from "./_components/activeUsers/ActiveUsers";
 import EarningByItem from "./_components/Earnings/EarningByItem";
 import EarningThisMonth from "./_components/Earnings/EarningThisMonth";
 import Impressions from "./_components/Impressions/Impressions";
