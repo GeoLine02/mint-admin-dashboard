@@ -1,7 +1,7 @@
 import { actionsData } from "@/app/mock/profile/profileOverviewData";
 import ActionCard from "./ActionCard";
 import Card from "@/app/components/ui/Card";
-import HelpIcon from "@/app/components/shared/helpIcon";
+import HelpIcon from "@/app/components/shared/HelpIcon";
 
 const Actions = () => {
   return (
