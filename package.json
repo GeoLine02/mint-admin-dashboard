@@ -16,6 +16,7 @@
     "@mui/icons-material": "^7.0.1",
     "@mui/material": "^7.0.1",
     "@mui/x-charts": "^7.28.0",
+    "@netlify/next": "^1.4.9",
     "classnames": "^2.5.1",
     "d3": "^7.9.0",
     "formik": "^2.4.6",
