@@ -6,7 +6,7 @@ import Withdraw from "./_components/Withdraw/Withdraw"; // or TopCountries
 
 const AnalyticsScreen = () => {
   return (
-    <div className="space-y-[30px] px-4">
+    <div className="space-y-[30px] px-4 mb-[30px]">
       <Withdraw />
 
       <div className="flex flex-col xl:flex-row gap-[30px] w-full">
