@@ -7,7 +7,7 @@ import {
   markElementClasses,
 } from "@mui/x-charts";
 import Card from "@/app/components/ui/Card";
-import HelpIcon from "@/app/components/shared/helpIcon";
+import HelpIcon from "@/app/components/shared/HelpIcon";
 
 const InteractionChart = () => {
   const containerRef = useRef<HTMLDivElement>(null);

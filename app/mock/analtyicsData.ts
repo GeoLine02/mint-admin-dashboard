@@ -71,21 +71,25 @@ export const metricsData: ImetricsData[] = [
 
 export const deviceUsageData: DeviceUsage[] = [
   {
+    userId: 1,
     deviceIcon: MobileIcon,
     device: "Mobile",
     usagePercentage: 96.4,
   },
   {
+    userId: 1,
     deviceIcon: DesktopIcon,
     device: "Desktop",
     usagePercentage: 2.76,
   },
   {
+    userId: 1,
     deviceIcon: TabletIcon,
     device: "Tablet",
     usagePercentage: 0.82,
   },
   {
+    userId: 1,
     deviceIcon: TvIcon,
     device: "TV",
     usagePercentage: 12.3,

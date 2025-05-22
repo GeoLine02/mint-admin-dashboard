@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { BarChart } from "@mui/x-charts";
-import HelpIcon from "@/app/components/shared/helpIcon";
+import HelpIcon from "@/app/components/shared/HelpIcon";
 
 const AgeRangeChart = () => {
   const containerRef = useRef<HTMLDivElement>(null);

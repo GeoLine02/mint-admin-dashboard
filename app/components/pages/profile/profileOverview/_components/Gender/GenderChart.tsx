@@ -2,7 +2,7 @@ import Card from "@/app/components/ui/Card";
 import { Gauge } from "@mui/x-charts";
 
 import CircleIcon from "@mui/icons-material/Circle";
-import HelpIcon from "@/app/components/shared/helpIcon";
+import HelpIcon from "@/app/components/shared/HelpIcon";
 
 const GenderChart = () => {
   const menPercentage = 60;
