@@ -16,7 +16,11 @@ const SignUpForm = () => {
 
   const onSubmit = async (values: ISignUpCredentials) => {
     try {
-      await signup(values);
+      const res = await signup(values);
+
+      if (res.status === 200) {
+        navigate.push("/signin");
+      }
     } catch (error) {
       console.log("error", error);
     }

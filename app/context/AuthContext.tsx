@@ -12,13 +12,16 @@ import { JWTPayload, jwtVerify } from "jose";
 import { login as loginService } from "@/app/services/auth";
 import { signup as signupService } from "@/app/services/auth";
 import { usePathname, useRouter } from "next/navigation";
+import { users } from "../db/db";
 
 const secret = new TextEncoder().encode("super-secret-key");
 
 interface AuthContextType {
   user: JWTPayload | null;
   login: (credentials: ISigInCredentials) => Promise<void>;
-  signup: (credentials: ISignUpCredentials) => Promise<void>;
+  signup: (
+    credentials: ISignUpCredentials
+  ) => Promise<{ status: number; message: string }>;
   logout: () => void;
   isAuthenticated: boolean;
 }
@@ -46,8 +49,12 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   const signup = async (credentials: ISignUpCredentials) => {
     const res = await signupService(credentials);
-    console.log("res: ", res);
+    return res;
   };
+
+  useLayoutEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  }, []);
 
   useLayoutEffect(() => {
     const checkToken = async () => {

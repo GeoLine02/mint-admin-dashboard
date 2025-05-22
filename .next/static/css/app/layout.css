@@ -545,9 +545,6 @@
   .items-center {
     align-items: center;
   }
-  .items-end {
-    align-items: flex-end;
-  }
   .items-start {
     align-items: flex-start;
   }
@@ -839,9 +836,6 @@
   }
   .object-cover {
     object-fit: cover;
-  }
-  .p-0\.5 {
-    padding: calc(var(--spacing) * 0.5);
   }
   .p-1 {
     padding: calc(var(--spacing) * 1);
@@ -1285,11 +1279,6 @@
         margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
         margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
       }
-    }
-  }
-  .lg\:p-1 {
-    @media (width >= 64rem) {
-      padding: calc(var(--spacing) * 1);
     }
   }
   .lg\:px-20 {

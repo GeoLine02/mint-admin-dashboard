@@ -45,5 +45,7 @@ export const signup = async (credentials: ISignUpCredentials) => {
     username: "",
   });
 
-  localStorage.setItem("users", JSON.stringify(credentials));
+  localStorage.setItem("users", JSON.stringify(users));
+
+  return { status: 200, message: "success" };
 };
